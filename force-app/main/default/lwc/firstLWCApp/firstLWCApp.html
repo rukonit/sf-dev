@@ -1,0 +1,9 @@
+<template>
+    <h1>Hellow {firstName}</h1>
+    
+    <div if:true={toggle}>
+    <lightning-input label="Name" value={firstName} onchange={changeHandler}></lightning-input>
+    </div>
+    <lightning-button label="Toggle" onclick={toggleHandler}></lightning-button>
+
+</template>
