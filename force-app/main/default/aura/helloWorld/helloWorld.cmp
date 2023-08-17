@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="num1" type="Integer" />
+    <aura:attribute name="num2" type="Integer" default="21" />
+    <aura:attribute name="result" type="Integer"></aura:attribute>
+    {!v.num1} + {!v.num2} = {!v.result}
+    {!mod(v.result,2)}
+    <aura:if isTrue="{!(mod(v.result,2))==0}">
+    The number is even
+    <aura:set attribute="else">
+        The number is odd
+        </aura:set>
+    </aura:if>
+    <br />
+    <ui:button label="Calculate" press="{!c.myAction}"></ui:button>
+</aura:component>
