@@ -1,0 +1,10 @@
+<template>
+    <p>{values}</p>
+    <ul>
+    <template iterator:it={values}>
+
+       <li key={it.value}><c-item-details num={it.value}></c-item-details></li>
+    </template>
+    </ul>
+    <lightning-button label="Multiply" onclick={submitHandler}></lightning-button>
+</template>

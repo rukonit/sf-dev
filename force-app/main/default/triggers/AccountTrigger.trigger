@@ -1,5 +1,6 @@
-trigger AccountTrigger on Account (after insert, before delete, before insert) {
-    if(Trigger.isAfter && Trigger.isInsert) {
+trigger AccountTrigger on Account (after insert, after update, before delete, before insert) {
+    if(Trigger.isAfter) {
+        if (Trigger.isInsert) {
         List<Contact> contacts = new List<Contact>();
         for(Account acct:Trigger.new) {
             Contact cont = new Contact();
@@ -11,7 +12,8 @@ trigger AccountTrigger on Account (after insert, before delete, before insert) {
             contacts.add(cont);
         }
         insert contacts;
-
+    }
+   
     }
 
     else if(Trigger.isBefore) {

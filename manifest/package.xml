@@ -32,5 +32,9 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+    <types>
+        <members>AccountPage</members>
+   <name>customController</name>
+ </types>
     <version>57.0</version>
 </Package>
