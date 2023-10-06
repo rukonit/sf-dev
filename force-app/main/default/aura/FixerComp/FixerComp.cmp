@@ -1,0 +1,23 @@
+<aura:component controller="HttpCalloutControl" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="ListOfCurrency" type="string[]"></aura:attribute>
+    <aura:attribute name="response" type="Map" />
+    <div class="slds-m-around-medium">
+        <div class="slds-media__body">
+            <p class="slds-page-header__title slds-truncate" title="Foreign Exchange Rates"></p>
+                 <p class="slds-page-header__title slds-truncate" title="Foreign Exchange Rates"></p>
+            <lightning:button variant="brand" label="Show Exchange Rate" onclick="{!c.calloutCtrl}" />
+         
+        </div>
+    </div>
+
+    <h3 class="slds-section-title--divider"> Date: {!v.response.date}</h3>
+    <h3 class="slds-section-title--divider"> Currency Base : {!v.response.base}</h3>
+    <ul class="slds-list--dotted">
+        <aura:iteration items="{!v.ListOfCurrency}" var="rateLst">
+            <li>{!rateLst}</li>
+        </aura:iteration>
+    </ul>
+
+
+   
+</aura:component>	

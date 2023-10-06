@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="View Contact" >
+        <lightning-input label="Number of contacts" onchange={handleContact}></lightning-input>   
+        <ul>
+            
+            <template if:true={responseReceived}>
+                <template for:each={contacts} for:item="it">
+                    <li key={it.id}> 
+                        <lightning-card title={it.LastName}>
+                            
+                            <lightning-formatted-text value={it.Phone}></lightning-formatted-text>
+                        </lightning-card>
+
+                    </li>
+                </template>
+
+            </template>
+        </ul>
+    </lightning-card>
+</template>
